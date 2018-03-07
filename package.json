@@ -1,6 +1,6 @@
 {
   "name": "@digituz/create-npm-package",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Command line interface to create the default structure of NPM packages.",
   "main": "index.js",
   "keywords": [
