@@ -1,0 +1,27 @@
+{
+  "name": "@digituz/create-npm-package",
+  "version": "1.0.1",
+  "description": "Command line interface to create the default structure of NPM packages.",
+  "main": "index.js",
+  "keywords": [
+    "npm",
+    "node",
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Bruno Krebs",
+    "email": "bruno.krebs@digituz.com.br",
+    "url": "https://twitter.com/brunoskrebs"
+  },
+  "bugs": {
+    "url": "https://github.com/Digituz/create-npm-package/issues"
+  },
+  "homepage": "https://github.com/Digituz/create-npm-package#readme",
+  "license": "MIT",
+  "dependencies": {
+    "command-line-args": "^5.0.2"
+  },
+  "bin": {
+    "create-npm-package": "src/index.js"
+  }
+}
