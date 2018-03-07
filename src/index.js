@@ -19,11 +19,17 @@ const packageJson = JSON.parse(readFileSync(`${__dirname}/templates/package.json
 packageJson.name = args.packageName;
 packageJson.author = {};
 
-if (packageJson.author.name) packageJson.author.name = args.developerName;
-if (packageJson.author.email) packageJson.author.email = args.developerEmail;
-if (packageJson.author.url) packageJson.author.url = args.developerUrl;
+if (args.developerName) packageJson.author.name = args.developerName;
+if (args.developerEmail) packageJson.author.email = args.developerEmail;
+if (args.developerUrl) packageJson.author.url = args.developerUrl;
 
-writeFileSync(`${process.cwd()}/${args.packageName}/package.json`, JSON.stringify({
+writeFileSync(`${process.cwd()}/package.json`, JSON.stringify({
     name: packageJson.name,
     ...packageJson,
 }, null, 2) + os.EOL);
+
+writeFileSync(`${process.cwd()}/.editorconfig`, readFileSync(`${__dirname}/templates/.editorconfig.template`));
+
+writeFileSync(`${process.cwd()}/.gitignore`, readFileSync(`${__dirname}/templates/.gitignore.template`));
+
+writeFileSync(`${process.cwd()}/LICENSE`, readFileSync(`${__dirname}/templates/LICENSE.template`));
